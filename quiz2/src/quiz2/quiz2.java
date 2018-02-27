@@ -42,12 +42,12 @@ public class quiz2 {
 	}
 	public double MonthlyPayment() {
 		double fv=this.totalPrice * Math.pow((1 + this.interestRate/12), this.lengthOfLoan);
-		return (fv * this.interestRate/12) / (Math.pow((1 + this.interestRate/12), this.lengthOfLoan ) - 1);
+		return (double) Math.round((fv * this.interestRate/12) / (Math.pow((1 + this.interestRate/12), this.lengthOfLoan ) - 1)*100)/100;
 	}
 	public double TotalInterest() {
 		double fv=this.totalPrice * Math.pow((1 + this.interestRate/12), this.lengthOfLoan);
-		double c=(fv * this.interestRate/12) / (Math.pow((1 + this.interestRate/12), this.lengthOfLoan ) - 1);
-		return ((c*this.lengthOfLoan)-this.totalPrice);
+		double c=(((double)fv * this.interestRate/12) / (Math.pow((1 + this.interestRate/12), this.lengthOfLoan ) - 1));
+		return (double) Math.round(((c*this.lengthOfLoan)-this.totalPrice)*100)/100;
 	}
 }
 
